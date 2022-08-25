@@ -1,8 +1,13 @@
 import React from "react"
+import OPTMW from "../assets/OPTM-W-NOTEXT.png"
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <>
+      <div className="bg-black">
+        <img className="object-contain h-20" src={OPTMW}/>
+      </div>
+    </>
   )
 }
 
