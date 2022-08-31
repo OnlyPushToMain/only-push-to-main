@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useTransition, animated, config } from "react-spring"
+import OPTMW from "../assets/OPTM-W-NOTEXT.png"
 
 const optm = [
   {
@@ -61,19 +62,26 @@ const AnimateLogo = () => {
   }, [items])
 
   return (
-    <div className="flex justify-center text-white text-5xl space-x-5">
-      {transitions(({ opacity }, item) => (
-        <animated.div
-          style={{
-            opacity: opacity.to(item.op),
-            transform: opacity
-              .to(item.trans)
-              .to(y => `translate3d(0,${y}px,0)`)
-          }}>
-          {item.fig}
-        </animated.div>
-      ))}
-    </div>
+    <>
+
+      <div className="flex flex-col items-center bg-black italic">
+        <div className="flex justify-center text-white text-5xl space-x-5">
+          {transitions(({ opacity }, item) => (
+            <animated.div
+              style={{
+                opacity: opacity.to(item.op),
+                transform: opacity
+                  .to(item.trans)
+                  .to(y => `translate3d(0,${y}px,0)`)
+              }}>
+              {item.fig}
+            </animated.div>
+          ))}
+        </div>
+        <img className="w-1/3 "src={OPTMW}/>
+      </div>
+
+    </>
   )
 }
 

@@ -1,19 +1,22 @@
 import React from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
-import OPTMW from "./assets/OPTM-W-NOTEXT.png"
+import About from "./components/About"
 import AnimateLogo from "./components/AnimateLogo"
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <div className="flex flex-col items-center bg-black italic">
-        <AnimateLogo />
-        <img className="w-1/3 "src={OPTMW}/>
+    <BrowserRouter>
+      <div className="h-[100vh] w-[100vw] bg-black">
+        <Header />
+        <Routes>
+          <Route path="/" element={<AnimateLogo/>}/>
+          <Route path="about" element={<About/>}/>
+        </Routes>
+        <Footer />
       </div>
-      <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 
